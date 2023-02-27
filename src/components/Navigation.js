@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default function Nav() {
+export default function Navigation() {
   const linkStyle = { border: '1px black', padding: '5px' };
+  let [view, setView] = useState("About");
 
   return (
-    <nav className="main-header-menu">
+    <nav>
       <section
         style={{
           display: 'flex',
