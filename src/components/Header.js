@@ -1,10 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation';
 
-export default function Header() {
+export default function Header({ currentView, changeView }) {
   return (
     <header>
-      <Navigation />
+      <Navigation currentView={currentView} changeView={changeView}/>
     </header>
   );
 }

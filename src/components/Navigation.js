@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default function Navigation() {
+export default function Navigation({ currentView, changeView }) {
   const linkStyle = { border: '1px black', padding: '5px' };
-  let [view, setView] = useState("About");
 
   return (
     <nav>
@@ -15,17 +14,33 @@ export default function Navigation() {
           justifyContent: 'flex-end',
         }}
       >
-        <div style={linkStyle}>
-          <a href="#">About Me</a>
+        <div
+          style={linkStyle}
+          onClick={() => changeView('about')}
+          className={currentView === 'about' ? 'nav-link active' : 'nav-link'}
+        >
+          <a href="#about">About Me</a>
         </div>
-        <div style={linkStyle}>
-          <a href="#">Portfolio</a>
+        <div
+          style={linkStyle}
+          onClick={() => changeView('portfolio')}
+          className={currentView === 'portfolio' ? 'nav-link active' : 'nav-link'}
+        >
+          <a href="#portfolio">Portfolio</a>
         </div>
-        <div style={linkStyle}>
-          <a href="#">Contact</a>
+        <div
+          style={linkStyle}
+          onClick={() => changeView('contact')}
+          className={currentView === 'contact' ? 'nav-link active' : 'nav-link'}
+        >
+          <a href="#contact">Contact</a>
         </div>
-        <div style={linkStyle}>
-          <a href="#">Resume</a>
+        <div
+          style={linkStyle}
+          onClick={() => changeView('resume')}
+          className={currentView === 'resume' ? 'nav-link active' : 'nav-link'}
+        >
+          <a href="#resume">Resume</a>
         </div>
       </section>
     </nav>
