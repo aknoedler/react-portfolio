@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 
 export default function Project(
     {
@@ -8,9 +9,15 @@ export default function Project(
         githubURL
     }
 ) {
+    
+    console.log(imagePath)
+
     return (
-        <p>
-            {title}
-        </p>
-    );
+        <div>
+            <Image 
+             src={imagePath}
+             fluid/>
+            
+        </div>
+    )
 }
